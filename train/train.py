@@ -54,6 +54,7 @@ class main:
         columns.append(output_col)
 
         self.norm_df = self.df[columns]
+        self.norm_df.to_csv("normalized.csv", index=False)
 
     # concatenate all rows and create labels
     def create_arrays(self):
