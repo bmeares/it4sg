@@ -29,7 +29,7 @@ alpha = 0
 init_alpha = alpha
 alpha_decay = 0
 z = []
-degree = 2
+degree = 1
 iterations = 0
 iter_data = []
 
@@ -38,7 +38,7 @@ def main():
 
     alphas = [1.0]
     decays = [0.925]
-    degrees = [5]
+    degrees = [1]
     j_value = 99999999
     best_J = j_value
     best_alpha = -1
@@ -50,8 +50,8 @@ def main():
     for a in alphas:
         for d in decays:
             for deg in degrees:
-                init(al = a, al_decay = d, deg = degree, ask = True)
-                print('alpha:', a, 'decay:', d, 'degree:', degree)
+                init(al = a, al_decay = d, deg = deg, ask = True)
+                print('alpha:', a, 'decay:', d, 'degree:', deg)
                 print('Training, please wait',end="",flush=True)
                 improve_weights()
                 print_results()
